@@ -11,12 +11,26 @@ app.use(morgan("dev")); // logs all theincoming req information
 //app.use(cors())    //  allow cross origin esources
 app.use(express.json()); // convert income data in the req.
 
+//mongoDB connect
 import { connectDB } from "./src/config/dbConfig.js";
 connectDB();
+
+//routers
+import userRouter from "./src/routers/userRouter.js";
+app.use("/api/v1/user", userRouter);
 
 app.use("*", (req, res) => {
   res.json({
     message: "you are in wrong place, Yo, go back!",
+  });
+});
+
+//global error handler
+app.use((error, req, res, next) => {
+  const code = error.code || 500;
+  res.status(code).json({
+    status: "error",
+    message: "you have done lot of mistake",
   });
 });
 
