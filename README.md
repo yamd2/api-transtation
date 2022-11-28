@@ -33,9 +33,9 @@ User api will use the following path `{rooturl}/api/v1/user`. This api will aloo
 
 User api will use the following path `{rooturl}/api/v1/transaction`. This api will aloow client to do CRUgD opearation on transaction table.
 
-| # | PATH | METHOD | IS PRIVATE | DESCRIPTION |
-| --- | ---- | ------ | ---------- | .--------------------------------------------------------------- |
-| 1. | `/` | GET | true | Allow user to fetch their own transactions only. |
-| 2. | `/` | POST | true | Allow user to post new transaction, data should be send as `{}` |
-| 3. | `/` | PATCH | true | |
-| 4. | `/` | DELETE | true | Allow user to selete their single or muliple transactions . |
+| #   | PATH | METHOD | IS PRIVATE | DESCRIPTION                                                     |
+| --- | ---- | ------ | ---------- | --------------------------------------------------------------- |
+| 1.  | `/`  | GET    | true       | Allow user to fetch their own transactions only.                |
+| 2.  | `/`  | POST   | true       | Allow user to post new transaction, data should be send as `{}` |
+| 3.  | `/`  | PATCH  | true       |                                                                 |
+| 4.  | `/`  | DELETE | true       | Allow user to selete their single or muliple transactions .     |
