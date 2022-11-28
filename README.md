@@ -24,18 +24,18 @@ All the endpoint will foloow the following path `{rooturl}api/v1`
 
 ## User API
 
-User api will use the following path `{rooturl}/api/v1/juser`. This api will aloow client to create user, login and more.
+User api will use the following path `{rooturl}/api/v1/user`. This api will aloow client to create user, login and more.
 | # | PATH | METHOD | IS PRIVATE | DESCRIPTION |
 | - | ----- | ----- | ----------- | ----------- |
-| 1. | `/` | POST | false | create new user |
+| 1. | `/` | POST | false | Create new user |
 
 ## Transaction API
 
 User api will use the following path `{rooturl}/api/v1/transaction`. This api will aloow client to do CRUgD opearation on transaction table.
 
-| #    | PATH | METHOD | IS PRIVATE | DESCRIPTION                                                     |
-| ---- | ---- | ------ | ---------- | --------------------------------------------------------------- |
-| 1.   | `/`  | GET    | true       | allow user to fetch their own transactions only                 |
-| 2.   | `/`  | POST   | true       | allow user to post new transaction, data should be send as `{}` |
-| 3. . | `/`  | PATCH  | true       | ..                                                              |
-| 4.   | `/`  | DELETE | true       | allow user to selete their single or muliple transactions       |
+| # | PATH | METHOD | IS PRIVATE | DESCRIPTION |
+| --- | ---- | ------ | ---------- | .--------------------------------------------------------------- |
+| 1. | `/` | GET | true | Allow user to fetch their own transactions only. |
+| 2. | `/` | POST | true | Allow user to post new transaction, data should be send as `{}` |
+| 3. | `/` | PATCH | true | |
+| 4. | `/` | DELETE | true | Allow user to selete their single or muliple transactions . |
