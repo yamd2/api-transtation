@@ -28,6 +28,7 @@ User api will use the following path `{rooturl}/api/v1/user`. This api will aloo
 | # | PATH | METHOD | IS PRIVATE | DESCRIPTION |
 | - | ----- | ----- | ----------- | ----------- |
 | 1. | `/` | POST | false | Create new user |
+| 2. | `/login` | POST | false | allow user to send email and pin for login |
 
 ## Transaction API
 

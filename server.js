@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8000;
 //middlewares
 app.use(morgan("dev")); // logs all theincoming req information
 //app.use(helmet())  // etting default security headers to protect some attack
-//app.use(cors())    //  allow cross origin esources
+app.use(cors()); //  allow cross origin esources
 app.use(express.json()); // convert income data in the req.
 
 //mongoDB connect
@@ -19,10 +19,13 @@ connectDB();
 import userRouter from "./src/routers/userRouter.js";
 app.use("/api/v1/user", userRouter);
 
-app.use("*", (req, res) => {
-  res.json({
-    message: "you are in wrong place, Yo, go back!",
-  });
+//catch when router is not found
+app.use("*", (req, res, next) => {
+  const error = {
+    message: "404 page not found!",
+    code: 200,
+  };
+  next(error);
 });
 
 //global error handler
@@ -30,7 +33,7 @@ app.use((error, req, res, next) => {
   const code = error.code || 500;
   res.status(code).json({
     status: "error",
-    message: "you have done lot of mistake",
+    message: error.message,
   });
 });
 
